@@ -1,0 +1,1218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grocerly — Fresh Groceries Delivered Fast</title>
+
+    <meta name="description"
+          content="Grocerly - fresh groceries, snacks, beverages and daily essentials delivered quickly.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="header-inner">
+
+        <a href="#" class="logo" id="logoBtn">
+            <span class="logo-icon">
+                <i class="fa-solid fa-basket-shopping"></i>
+            </span>
+            <span>R&S<span>Mart</span></span>
+        </a>
+
+        <button class="location-btn" id="locationBtn">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>
+                <small>Delivering to</small>
+                <strong>Hyderabad</strong>
+            </span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </button>
+
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search for groceries, fruits, snacks..."
+                autocomplete="off">
+            <button id="clearSearch" class="clear-search hidden">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="search-suggestions hidden" id="searchSuggestions"></div>
+        </div>
+
+        <button class="account-btn" id="accountBtn">
+            <i class="fa-regular fa-user"></i>
+            <span>Account</span>
+        </button>
+
+        <button class="cart-btn" id="cartBtn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span>Cart</span>
+            <b id="cartCount">0</b>
+        </button>
+
+        <button class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <button id="mobileAccount">
+            <i class="fa-regular fa-user"></i> Account
+        </button>
+        <button id="mobileCart">
+            <i class="fa-solid fa-bag-shopping"></i> Cart
+        </button>
+        <button id="mobileLocation">
+            <i class="fa-solid fa-location-dot"></i> Hyderabad
+        </button>
+    </nav>
+</header>
+
+
+<!-- ================= MAIN ================= -->
+<main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero-section">
+
+        <div class="hero-slider" id="heroSlider">
+
+            <article class="hero-slide active">
+                <div class="hero-content">
+                    <span class="hero-tag">
+                        <i class="fa-solid fa-bolt"></i> QUICK DELIVERY
+                    </span>
+
+                    <h1>Fresh groceries.<br><span>Faster than ever.</span></h1>
+
+                    <p>
+                        Everything you need for your kitchen, delivered
+                        fresh to your doorstep.
+                    </p>
+
+                    <button class="primary-btn shop-now">
+                        Shop Fresh <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="hero-visual hero-green">
+                    <div class="floating-product product-one">🥑</div>
+                    <div class="floating-product product-two">🍅</div>
+                    <div class="floating-product product-three">🥦</div>
+                    <div class="delivery-card">
+                        <i class="fa-solid fa-motorcycle"></i>
+                        <div>
+                            <strong>15–30 min</strong>
+                            <small>Express delivery</small>
+                        </div>
+                    </div>
+                    <div class="hero-basket">🛒</div>
+                </div>
+            </article>
+
+            <article class="hero-slide">
+                <div class="hero-content">
+                    <span class="hero-tag">
+                        <i class="fa-solid fa-tag"></i> WEEKEND DEALS
+                    </span>
+
+                    <h1>Save more on<br><span>daily essentials.</span></h1>
+
+                    <p>
+                        Amazing deals on snacks, beverages and household
+                        essentials.
+                    </p>
+
+                    <button class="primary-btn shop-now">
+                        Explore Deals <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="hero-visual hero-orange">
+                    <div class="offer-circle">UP TO<br><strong>50%</strong><br>OFF</div>
+                    <div class="snack-emoji">🍿</div>
+                    <div class="snack-emoji second">🥤</div>
+                    <div class="snack-emoji third">🍪</div>
+                </div>
+            </article>
+
+            <article class="hero-slide">
+                <div class="hero-content">
+                    <span class="hero-tag">
+                        <i class="fa-solid fa-leaf"></i> FARM FRESH
+                    </span>
+
+                    <h1>Good food starts<br>with <span>freshness.</span></h1>
+
+                    <p>
+                        Farm-picked fruits and vegetables selected every
+                        morning.
+                    </p>
+
+                    <button class="primary-btn shop-now">
+                        Shop Produce <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="hero-visual hero-purple">
+                    <div class="fruit fruit-a">🍎</div>
+                    <div class="fruit fruit-b">🍊</div>
+                    <div class="fruit fruit-c">🍇</div>
+                    <div class="fruit fruit-d">🍌</div>
+                </div>
+            </article>
+
+        </div>
+
+        <button class="slider-control prev" id="prevSlide">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <button class="slider-control next" id="nextSlide">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <div class="slider-dots" id="sliderDots"></div>
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+    <section class="section categories-section">
+
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">SHOP BY</span>
+                <h2>Categories</h2>
+            </div>
+
+            <button class="text-btn" id="viewAllCategories">
+                View all <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <div class="categories-scroll" id="categoriesContainer"></div>
+
+    </section>
+
+
+    <!-- ================= SHOP TOOLBAR ================= -->
+    <section class="section shop-section" id="shopSection">
+
+        <div class="section-heading products-heading">
+            <div>
+                <span class="eyebrow">FRESH PICKS</span>
+                <h2>Shop all products</h2>
+                <p id="productResultCount">30 products</p>
+            </div>
+
+            <div class="shop-controls">
+
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                </select>
+
+                <select id="priceFilter">
+                    <option value="all">Any Price</option>
+                    <option value="0-100">Under ₹100</option>
+                    <option value="100-250">₹100 – ₹250</option>
+                    <option value="250-500">₹250 – ₹500</option>
+                    <option value="500-1000">₹500+</option>
+                </select>
+
+                <select id="sortFilter">
+                    <option value="default">Sort: Recommended</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                    <option value="discount">Biggest Discount</option>
+                </select>
+
+                <button class="filter-clear hidden" id="clearFilters">
+                    Clear
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Skeleton -->
+        <div class="product-grid" id="skeletonGrid">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+
+        <!-- Products -->
+        <div class="product-grid hidden" id="productGrid"></div>
+
+        <div class="no-products hidden" id="noProducts">
+            <div class="empty-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h3>No products found</h3>
+            <p>Try another search or clear your filters.</p>
+            <button class="primary-btn" id="noProductsClear">
+                View all products
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+    <section class="features-section">
+        <div class="section feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <h3>Lightning Fast</h3>
+                    <p>Get your groceries in 15–30 minutes.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div>
+                    <h3>Fresh & Quality</h3>
+                    <p>Carefully selected products every day.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+                <div>
+                    <h3>Secure Payments</h3>
+                    <p>Your payment information stays protected.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div>
+                    <h3>Always Here</h3>
+                    <p>Friendly support when you need us.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+
+<!-- ================= CART DRAWER ================= -->
+<div class="overlay hidden" id="cartOverlay"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-header">
+        <div>
+            <span class="eyebrow">YOUR BAG</span>
+            <h2>Shopping Cart</h2>
+        </div>
+
+        <button class="close-btn" id="closeCart">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+
+    <div class="cart-body">
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-empty hidden" id="cartEmpty">
+            <div class="cart-empty-icon">
+                <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <h3>Your cart is empty</h3>
+            <p>Add products to get started.</p>
+            <button class="primary-btn" id="emptyShopBtn">
+                Shop Now
+            </button>
+        </div>
+
+    </div>
+
+    <div class="cart-footer" id="cartFooter">
+
+        <div class="coupon-inline">
+            <input type="text" id="cartCoupon" placeholder="Coupon code">
+            <button id="cartCouponBtn">Apply</button>
+        </div>
+
+        <div class="mini-coupon-message" id="cartCouponMessage"></div>
+
+        <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="cartSubtotal">₹0</strong>
+        </div>
+
+        <div class="summary-line discount-line">
+            <span>Discount</span>
+            <strong id="cartDiscount">-₹0</strong>
+        </div>
+
+        <div class="summary-line">
+            <span>Delivery Fee</span>
+            <strong id="cartDelivery">₹0</strong>
+        </div>
+
+        <div class="summary-line">
+            <span>Handling Fee</span>
+            <strong id="cartHandling">₹0</strong>
+        </div>
+
+        <div class="summary-total">
+            <span>Total</span>
+            <strong id="cartTotal">₹0</strong>
+        </div>
+
+        <button class="checkout-btn" id="checkoutBtn">
+            Proceed to Checkout
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <p class="secure-note">
+            <i class="fa-solid fa-lock"></i>
+            Safe & secure checkout
+        </p>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= CHECKOUT MODAL ================= -->
+<div class="modal-overlay hidden" id="checkoutModal">
+
+    <div class="checkout-modal">
+
+        <div class="checkout-header">
+            <div>
+                <span class="eyebrow">CHECKOUT</span>
+                <h2>Complete your order</h2>
+            </div>
+
+            <button class="close-btn" id="closeCheckout">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Progress -->
+        <div class="checkout-progress">
+            <div class="progress-step active" data-step="1">
+                <span>1</span>
+                <small>Address</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step" data-step="2">
+                <span>2</span>
+                <small>Delivery</small>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step" data-step="3">
+                <span>3</span>
+                <small>Payment</small>
+            </div>
+        </div>
+
+
+        <div class="checkout-content">
+
+            <!-- STEP 1 -->
+            <section class="checkout-step active" id="step1">
+
+                <div class="checkout-layout">
+
+                    <div class="checkout-main">
+
+                        <div class="checkout-card">
+                            <div class="card-title">
+                                <div>
+                                    <span class="step-number">01</span>
+                                    <h3>Delivery address</h3>
+                                </div>
+                            </div>
+
+                            <div class="form-grid">
+
+                                <div class="form-group">
+                                    <label>Full Name *</label>
+                                    <input id="fullName" type="text"
+                                           placeholder="Enter your full name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Mobile Number *</label>
+                                    <input id="mobileNumber" type="tel"
+                                           maxlength="10"
+                                           placeholder="10-digit mobile number">
+                                </div>
+
+                                <div class="form-group full">
+                                    <label>House / Flat Number *</label>
+                                    <input id="houseNumber" type="text"
+                                           placeholder="Flat / House number">
+                                </div>
+
+                                <div class="form-group full">
+                                    <label>Street / Road *</label>
+                                    <input id="street" type="text"
+                                           placeholder="Street or road name">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Area *</label>
+                                    <input id="area" type="text"
+                                           placeholder="Area / locality">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>City *</label>
+                                    <input id="city" type="text"
+                                           value="Hyderabad">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>State *</label>
+                                    <input id="state" type="text"
+                                           value="Telangana">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>PIN Code *</label>
+                                    <input id="pinCode" type="text"
+                                           maxlength="6"
+                                           placeholder="500001">
+                                </div>
+
+                            </div>
+
+                            <div class="address-types">
+                                <label>Save address as</label>
+
+                                <div class="address-options">
+
+                                    <button class="address-type active"
+                                            data-type="Home">
+                                        <i class="fa-solid fa-house"></i>
+                                        Home
+                                    </button>
+
+                                    <button class="address-type"
+                                            data-type="Work">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                        Work
+                                    </button>
+
+                                    <button class="address-type"
+                                            data-type="Other">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        Other
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <button class="continue-btn" id="addressContinue">
+                            Continue to Delivery
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+                    <div class="checkout-side">
+                        <div class="order-mini-card">
+                            <h3>Order summary</h3>
+                            <div id="checkoutMiniItems"></div>
+                            <div class="mini-total">
+                                <span>Total</span>
+                                <strong id="checkoutMiniTotal">₹0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STEP 2 -->
+            <section class="checkout-step" id="step2">
+
+                <div class="checkout-layout">
+
+                    <div class="checkout-main">
+
+                        <div class="checkout-card">
+
+                            <div class="card-title">
+                                <div>
+                                    <span class="step-number">02</span>
+                                    <h3>Choose delivery</h3>
+                                </div>
+                            </div>
+
+                            <div class="delivery-options">
+
+                                <label class="delivery-option active">
+                                    <input type="radio"
+                                           name="delivery"
+                                           value="express"
+                                           checked>
+
+                                    <div class="delivery-icon">
+                                        <i class="fa-solid fa-bolt"></i>
+                                    </div>
+
+                                    <div class="delivery-info">
+                                        <strong>Express Delivery</strong>
+                                        <span>15–30 minutes</span>
+                                        <small>Get it delivered as soon as possible</small>
+                                    </div>
+
+                                    <b>₹25</b>
+                                </label>
+
+                                <label class="delivery-option">
+                                    <input type="radio"
+                                           name="delivery"
+                                           value="scheduled">
+
+                                    <div class="delivery-icon">
+                                        <i class="fa-regular fa-clock"></i>
+                                    </div>
+
+                                    <div class="delivery-info">
+                                        <strong>Scheduled Delivery</strong>
+                                        <span>Select a convenient time</span>
+                                        <small>Plan your delivery in advance</small>
+                                    </div>
+
+                                    <b>₹15</b>
+                                </label>
+
+                            </div>
+
+                            <div class="time-slot hidden" id="timeSlot">
+                                <label>Select time slot</label>
+
+                                <div class="time-grid">
+                                    <button class="time-option active">
+                                        8:00 AM – 10:00 AM
+                                    </button>
+                                    <button class="time-option">
+                                        10:00 AM – 12:00 PM
+                                    </button>
+                                    <button class="time-option">
+                                        12:00 PM – 2:00 PM
+                                    </button>
+                                    <button class="time-option">
+                                        4:00 PM – 6:00 PM
+                                    </button>
+                                    <button class="time-option">
+                                        6:00 PM – 8:00 PM
+                                    </button>
+                                    <button class="time-option">
+                                        8:00 PM – 10:00 PM
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="saved-address-preview">
+                            <div class="saved-address-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <small>Delivering to</small>
+                                <strong id="savedAddressText">
+                                    Your selected address
+                                </strong>
+                            </div>
+                            <button id="editAddress">Edit</button>
+                        </div>
+
+                        <div class="step-actions">
+                            <button class="back-btn" id="deliveryBack">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                Back
+                            </button>
+
+                            <button class="continue-btn" id="deliveryContinue">
+                                Continue to Payment
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <div class="checkout-side">
+                        <div class="order-mini-card">
+                            <h3>Order total</h3>
+                            <div class="mini-summary">
+                                <div>
+                                    <span>Items</span>
+                                    <strong id="deliveryItemsTotal">₹0</strong>
+                                </div>
+                                <div>
+                                    <span>Delivery</span>
+                                    <strong id="deliveryFeePreview">₹25</strong>
+                                </div>
+                                <div>
+                                    <span>Discount</span>
+                                    <strong class="green"
+                                            id="deliveryDiscountPreview">-₹0</strong>
+                                </div>
+                            </div>
+
+                            <div class="mini-total">
+                                <span>Total</span>
+                                <strong id="deliveryTotalPreview">₹0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- STEP 3 -->
+            <section class="checkout-step" id="step3">
+
+                <div class="checkout-layout">
+
+                    <div class="checkout-main">
+
+                        <div class="checkout-card">
+
+                            <div class="card-title">
+                                <div>
+                                    <span class="step-number">03</span>
+                                    <h3>Payment method</h3>
+                                </div>
+                            </div>
+
+                            <div class="payment-methods">
+
+                                <button class="payment-method active"
+                                        data-payment="upi">
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+                                    <span>
+                                        <strong>UPI</strong>
+                                        <small>Google Pay, PhonePe, Paytm</small>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+
+                                <button class="payment-method"
+                                        data-payment="card">
+                                    <i class="fa-regular fa-credit-card"></i>
+                                    <span>
+                                        <strong>Credit / Debit Card</strong>
+                                        <small>Visa, Mastercard, RuPay</small>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+
+                                <button class="payment-method"
+                                        data-payment="netbanking">
+                                    <i class="fa-solid fa-building-columns"></i>
+                                    <span>
+                                        <strong>Net Banking</strong>
+                                        <small>All major banks supported</small>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+
+                                <button class="payment-method"
+                                        data-payment="cod">
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                    <span>
+                                        <strong>Cash on Delivery</strong>
+                                        <small>Pay when your order arrives</small>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+
+                            </div>
+
+
+                            <!-- UPI -->
+                            <div class="payment-form active" id="upiForm">
+
+                                <label>UPI ID</label>
+
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-at"></i>
+                                    <input id="upiId"
+                                           type="text"
+                                           placeholder="yourname@upi">
+                                </div>
+
+                                <p class="payment-help">
+                                    This is a frontend demo. No real payment
+                                    will be processed.
+                                </p>
+
+                            </div>
+
+
+                            <!-- CARD -->
+                            <div class="payment-form" id="cardForm">
+
+                                <div class="form-grid">
+
+                                    <div class="form-group full">
+                                        <label>Card Number</label>
+                                        <input id="cardNumber"
+                                               type="text"
+                                               maxlength="19"
+                                               placeholder="1234 5678 9012 3456">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Expiry Date</label>
+                                        <input id="expiry"
+                                               type="text"
+                                               maxlength="5"
+                                               placeholder="MM/YY">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>CVV</label>
+                                        <input id="cvv"
+                                               type="password"
+                                               maxlength="3"
+                                               placeholder="123">
+                                    </div>
+
+                                    <div class="form-group full">
+                                        <label>Cardholder Name</label>
+                                        <input id="cardName"
+                                               type="text"
+                                               placeholder="Name on card">
+                                    </div>
+
+                                </div>
+
+                                <p class="payment-help">
+                                    Demo only — never enter real card details.
+                                </p>
+
+                            </div>
+
+
+                            <!-- NET BANKING -->
+                            <div class="payment-form" id="netbankingForm">
+
+                                <label>Select your bank</label>
+
+                                <select id="bankSelect">
+                                    <option value="">Choose bank</option>
+                                    <option>State Bank of India</option>
+                                    <option>HDFC Bank</option>
+                                    <option>ICICI Bank</option>
+                                    <option>Axis Bank</option>
+                                    <option>Kotak Mahindra Bank</option>
+                                </select>
+
+                            </div>
+
+
+                            <!-- COD -->
+                            <div class="payment-form" id="codForm">
+
+                                <div class="cod-message">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    <div>
+                                        <strong>Cash on Delivery</strong>
+                                        <p>
+                                            Please keep the exact amount ready
+                                            when your order arrives.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="step-actions">
+
+                            <button class="back-btn" id="paymentBack">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                Back
+                            </button>
+
+                            <button class="place-order-btn" id="placeOrder">
+                                <i class="fa-solid fa-lock"></i>
+                                Place Order
+                                <strong id="placeOrderAmount">₹0</strong>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="checkout-side">
+
+                        <div class="order-mini-card">
+
+                            <h3>Bill details</h3>
+
+                            <div class="mini-summary">
+
+                                <div>
+                                    <span>Subtotal</span>
+                                    <strong id="paymentSubtotal">₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>Discount</span>
+                                    <strong class="green"
+                                            id="paymentDiscount">-₹0</strong>
+                                </div>
+
+                                <div>
+                                    <span>Delivery fee</span>
+                                    <strong id="paymentDelivery">₹25</strong>
+                                </div>
+
+                                <div>
+                                    <span>Handling fee</span>
+                                    <strong>₹5</strong>
+                                </div>
+
+                            </div>
+
+                            <div class="mini-total">
+                                <span>Total</span>
+                                <strong id="paymentTotal">₹0</strong>
+                            </div>
+
+                            <div class="secure-payment">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                Secure checkout
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ================= ORDER CONFIRMATION ================= -->
+<div class="modal-overlay hidden" id="confirmationModal">
+
+    <div class="confirmation-modal">
+
+        <button class="close-btn confirmation-close"
+                id="closeConfirmation">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="success-animation">
+            <div class="success-circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+        </div>
+
+        <span class="success-label">ORDER SUCCESSFUL</span>
+
+        <h2>Order Confirmed!</h2>
+
+        <p>
+            Thank you for shopping with Grocerly.
+            Your fresh groceries are on their way.
+        </p>
+
+        <div class="order-id-box">
+            <span>Order ID</span>
+            <strong id="confirmationOrderId">#GR20261008XXXX</strong>
+        </div>
+
+        <div class="estimated-delivery">
+            <i class="fa-solid fa-bolt"></i>
+            <div>
+                <small>Estimated delivery</small>
+                <strong id="confirmationDelivery">
+                    20–30 minutes
+                </strong>
+            </div>
+        </div>
+
+        <div class="tracking">
+
+            <div class="tracking-line"></div>
+
+            <div class="tracking-item active">
+                <span><i class="fa-solid fa-check"></i></span>
+                <strong>Order Placed</strong>
+            </div>
+
+            <div class="tracking-item active">
+                <span><i class="fa-solid fa-check"></i></span>
+                <strong>Confirmed</strong>
+            </div>
+
+            <div class="tracking-item current">
+                <span><i class="fa-solid fa-box"></i></span>
+                <strong>Preparing</strong>
+            </div>
+
+            <div class="tracking-item">
+                <span><i class="fa-solid fa-motorcycle"></i></span>
+                <strong>On the way</strong>
+            </div>
+
+            <div class="tracking-item">
+                <span><i class="fa-solid fa-house"></i></span>
+                <strong>Delivered</strong>
+            </div>
+
+        </div>
+
+        <div class="confirmation-details">
+
+            <div>
+                <small>Total paid</small>
+                <strong id="confirmationTotal">₹0</strong>
+            </div>
+
+            <div>
+                <small>Payment</small>
+                <strong id="confirmationPayment">UPI</strong>
+            </div>
+
+            <div>
+                <small>Items</small>
+                <strong id="confirmationItems">0 items</strong>
+            </div>
+
+        </div>
+
+        <div class="confirmation-actions">
+
+            <button class="track-btn" id="trackOrderBtn">
+                <i class="fa-solid fa-location-crosshairs"></i>
+                Track Order
+            </button>
+
+            <button class="continue-shopping-btn"
+                    id="continueShopping">
+                Continue Shopping
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ================= LOCATION MODAL ================= -->
+<div class="modal-overlay hidden" id="locationModal">
+
+    <div class="small-modal">
+
+        <button class="close-btn" id="closeLocation">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="location-modal-icon">
+            <i class="fa-solid fa-location-dot"></i>
+        </div>
+
+        <h2>Choose your location</h2>
+
+        <p>
+            Enter your city to see products and delivery options
+            available near you.
+        </p>
+
+        <input id="locationInput"
+               type="text"
+               placeholder="Enter city">
+
+        <button class="primary-btn full-btn" id="saveLocation">
+            Save Location
+        </button>
+
+    </div>
+</div>
+
+
+<!-- ================= TOAST ================= -->
+<div class="toast" id="toast">
+    <div class="toast-icon">
+        <i class="fa-solid fa-check"></i>
+    </div>
+    <div>
+        <strong id="toastTitle">Success</strong>
+        <span id="toastMessage">Action completed.</span>
+    </div>
+    <button id="closeToast">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+    <div class="footer-main section">
+
+        <div class="footer-brand">
+
+            <a href="#" class="logo footer-logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </span>
+                <span>R&S<span>Mart</span></span>
+            </a>
+
+            <p>
+                Fresh groceries and everyday essentials,
+                delivered to your doorstep.
+            </p>
+
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-column">
+            <h3>Company</h3>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Blog</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Customer Support</h3>
+            <a href="#">Help Center</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Returns</a>
+            <a href="#">FAQs</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Legal</h3>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Refund Policy</a>
+        </div>
+
+        <div class="footer-column app-column">
+            <h3>Get the app</h3>
+
+            <button class="app-btn">
+                <i class="fa-brands fa-google-play"></i>
+                <span>
+                    <small>GET IT ON</small>
+                    Google Play
+                </span>
+            </button>
+
+            <button class="app-btn">
+                <i class="fa-brands fa-apple"></i>
+                <span>
+                    <small>DOWNLOAD ON THE</small>
+                    App Store
+                </span>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <div class="section footer-bottom-inner">
+            <span>© 2026 R&SMart. All Rights Reserved.</span>
+
+            <span>
+                Made with <i class="fa-solid fa-heart"></i>
+                for better R&SMart shopping.
+            </span>
+        </div>
+    </div>
+
+</footer>
+
+
+<!-- ================= MOBILE CART BAR ================= -->
+<div class="mobile-cart-bar hidden" id="mobileCartBar">
+    <div>
+        <span id="mobileCartItems">0 items</span>
+        <strong id="mobileCartTotal">₹0</strong>
+    </div>
+
+    <button id="mobileViewCart">
+        View Cart <i class="fa-solid fa-arrow-right"></i>
+    </button>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
